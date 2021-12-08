@@ -1,0 +1,3 @@
+parse /(?<nonid>\d) (?<accountid>\d*) (?<eniid>\S*) (?<sourceip>\S*) (?<destip>\S*) (?<sourceport>\d*) (?<destport>\d*) (?<protocal>\d*) (?<packet>\d*) (?<byte>\d*) (?<starttime>\d*) (?<endtime>\d*) (?<status>\S*) (?<OK>\S*)/
+| filter @message like /REJECT/ OR @message like /1433/
+| fields @timestamp, @message
